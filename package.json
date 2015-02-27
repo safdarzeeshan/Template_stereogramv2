@@ -1,0 +1,18 @@
+{
+  "name": "web-starter-template",
+  "version": "1.0.0",
+  "description": "A quick starter template for web projects, armed with gulp, sass and js processing",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Azhar Khan",
+  "license": "WFTPL",
+  "devDependencies": {
+    "browser-sync": "^2.2.1",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.2",
+    "gulp-ruby-sass": "^1.0.0-alpha.3"
+  }
+}
