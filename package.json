@@ -12,7 +12,12 @@
     "browser-sync": "^2.2.1",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
+    "gulp-filter": "^2.0.2",
     "gulp-jshint": "^1.9.2",
-    "gulp-ruby-sass": "^1.0.0-alpha.3"
+    "gulp-ruby-sass": "0.7.1",
+    "jshint-stylish": "^1.0.1",
+    "node-bourbon": "^4.2.1-beta1",
+    "run-sequence": "^1.0.2",
+    "vinyl-source-stream": "^1.0.0"
   }
 }
