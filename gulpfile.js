@@ -12,7 +12,7 @@ var runSequence = require('run-sequence');
 
 var paths = {
   js: ['app/scripts/**/*.js'],
-  sass: 'app/styles/**/*.sass',
+  sass: ['app/styles/**/*.sass'],
   html: ['app/views/*.html']
 }
 
@@ -21,6 +21,7 @@ gulp.task('jshint', function() {
   return gulp.src(paths.js)
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(gulp.dest('dist/scripts'))
     .pipe(reload({stream: true, once: true}))
 });
 
@@ -28,7 +29,6 @@ gulp.task('jshint', function() {
 gulp.task('styles', function() {
   return gulp.src(paths.sass)
     .pipe(sass({
-      sourcemap: true,
       sourcemapPath: 'app/styles/',
       loadPath: require('node-bourbon').includePaths
     }))
@@ -40,9 +40,15 @@ gulp.task('styles', function() {
 gulp.task('copy', function() {
   return gulp.src(['app/index.html',
     'app/styles/**/*.css',
-    'app/script/**/*.js',
+    'app/scripts/**/*.js',
     'app/views/**/*.html'], {base: './app'})
     .pipe(gulp.dest('dist'))
+});
+
+gulp.task('copy:html', function() {
+  return gulp.src(['app/index.html', 'app/views/**/*.html'], {base: './app'})
+    .pipe(gulp.dest('dist'))
+    .pipe(reload({stream: true}))
 });
 
 // clean output
@@ -57,8 +63,8 @@ gulp.task('serve', function() {
     }
   });
 
-  gulp.watch(paths.html, reload);
-  gulp.watch(paths.sass, reload);
+  gulp.watch(['app/index.html', paths.html], ['copy:html']);
+  gulp.watch(paths.sass, ['styles']);
   gulp.watch(paths.js, ['jshint']);
 });
 
