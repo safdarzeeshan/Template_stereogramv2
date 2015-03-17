@@ -17,4 +17,4 @@ Quick, bare-bones starting template for web projects.
 ## Inspirations
 
 * [HTML5 Bones](https://github.com/iandevlin/html5bones)
-* [Google Web Starter Kit](https://github.com/google/web-starter-kit)
+* [Google Web Starter Kit](https://github.com/google/web-starter-kit)# Template_stereogramv2

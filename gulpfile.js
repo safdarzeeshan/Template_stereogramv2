@@ -58,6 +58,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 gulp.task('serve', function() {
   browserSync({
     notify: false,
+    https: false,
     server: {
       baseDir: ['.tmp', 'dist']
     }

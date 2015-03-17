@@ -8,6 +8,7 @@
     <!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Add normalize.css which enables browsers to render all elements more consistently and in line with modern standards as it only targets particular styles that need normalizing -->
+
     <link href="styles/normalize.css" rel="stylesheet" media="all">
     <link href="styles/main.css" rel="stylesheet" media="all">
 </head>
@@ -15,10 +16,19 @@
     <div class="main">
         <h1>Woo! You Made It!</h1>
         <p>Now go make some cool(er) things....</p>
-        <button onClick="test()">Yes!</button>
+        <button onClick="checkYTAuth()">Youtube History!</button>
+        <button onClick="checkSCAuth()">SoundCloud Liked!</button>
+        <button onClick="checkSpotifyAuth()">Spotify Songs!</button>
+        <button onClick="drfGET()">GET!</button>
     </div>
 
     <!-- add scripts here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://connect.soundcloud.com/sdk.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=apiClientReady"></script>
+    
+    
+
 </body>
 </html>
