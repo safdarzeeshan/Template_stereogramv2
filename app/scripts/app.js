@@ -95,9 +95,23 @@ function checkSpotifyAuth(){
 
 function drfGET(){
 
-	var get = $.ajax({
+	// var auth = $.ajax({
+	// 			type: 'GET',
+	// 			url:'http://localhost:8000',
+	// 			dataType: 'json',
+	// 			headers: {
+	// 			"Authorization": "Basic " + btoa('zeeshan:zeeshan'),
+				
+	// 			},
+	// 		});
+
+	// auth.done(function(response){
+	// 	console.log(response);
+	// });
+
+	var getUser = $.ajax({
 				type: 'GET',
-				url:'http://localhost:8000',
+				url:'http://localhost:8000/users/',
 				dataType: 'json',
 				headers: {
 				"Authorization": "Basic " + btoa('zeeshan:zeeshan'),
@@ -105,7 +119,7 @@ function drfGET(){
 				},
 			});
 
-	get.done(function(response){
+	getUser.done(function(response){
 		console.log(response);
 	});
 }
